@@ -63,7 +63,7 @@
             // 
             this.browseButton.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(148)))), ((int)(((byte)(9)))));
             this.browseButton.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.browseButton.ButtonText = "Öffnen";
+            this.browseButton.ButtonText = "Browse";
             this.browseButton.Location = new System.Drawing.Point(504, 71);
             this.browseButton.Name = "browseButton";
             this.browseButton.Size = new System.Drawing.Size(97, 19);
@@ -74,7 +74,7 @@
             // 
             this.cancelButton.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(148)))), ((int)(((byte)(9)))));
             this.cancelButton.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.cancelButton.ButtonText = "Abbrechen";
+            this.cancelButton.ButtonText = "Cancel";
             this.cancelButton.Location = new System.Drawing.Point(12, 136);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(97, 36);
@@ -85,7 +85,7 @@
             // 
             this.okButton.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(148)))), ((int)(((byte)(9)))));
             this.okButton.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.okButton.ButtonText = "Speichern";
+            this.okButton.ButtonText = "Save";
             this.okButton.Location = new System.Drawing.Point(556, 136);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(97, 36);
@@ -107,9 +107,9 @@
             this.wowLocationLabel.ForeColor = System.Drawing.Color.White;
             this.wowLocationLabel.Location = new System.Drawing.Point(88, 74);
             this.wowLocationLabel.Name = "wowLocationLabel";
-            this.wowLocationLabel.Size = new System.Drawing.Size(92, 13);
+            this.wowLocationLabel.Size = new System.Drawing.Size(60, 13);
             this.wowLocationLabel.TabIndex = 22;
-            this.wowLocationLabel.Text = "WoW Verzeichnis";
+            this.wowLocationLabel.Text = "WoW Path";
             this.wowLocationLabel.Click += new System.EventHandler(this.wowLocationLabel_Click);
             // 
             // MinimizePictureBox
@@ -142,7 +142,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::CataLauncher.Properties.Resources.atnborder;
+            this.pictureBox1.BackgroundImage = global::CataLauncher.Properties.Resources.border;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(665, 184);

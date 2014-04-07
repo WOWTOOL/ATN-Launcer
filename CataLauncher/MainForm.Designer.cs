@@ -71,7 +71,7 @@
             this.fileToolStripMenuItem1});
             this.menuStrip.Location = new System.Drawing.Point(13, 29);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(54, 24);
+            this.menuStrip.Size = new System.Drawing.Size(45, 24);
             this.menuStrip.TabIndex = 6;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -82,16 +82,16 @@
             this.exitToolStripMenuItem1});
             this.fileToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
-            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(46, 20);
-            this.fileToolStripMenuItem1.Text = "Datei";
+            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem1.Text = "File";
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.settingsToolStripMenuItem.Text = "Einstellungen";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem1
@@ -99,8 +99,8 @@
             this.exitToolStripMenuItem1.BackColor = System.Drawing.Color.Black;
             this.exitToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(145, 22);
-            this.exitToolStripMenuItem1.Text = "Schließen";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
             // 
             // fileToolStripMenuItem
@@ -279,7 +279,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::CataLauncher.Properties.Resources.atnborder;
+            this.pictureBox1.BackgroundImage = global::CataLauncher.Properties.Resources.border;
             this.pictureBox1.Location = new System.Drawing.Point(-1, -2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(766, 562);
@@ -306,7 +306,7 @@
             this.webBrowser1.ScrollBarsEnabled = false;
             this.webBrowser1.Size = new System.Drawing.Size(722, 361);
             this.webBrowser1.TabIndex = 22;
-            this.webBrowser1.Url = new System.Uri("http://atom-network.eu/launcheratn", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("http://atom-network.eu/launcher", System.UriKind.Absolute);
             // 
             // downloadBar1
             // 
