@@ -42,6 +42,29 @@ namespace CataLauncher
 {
     public partial class MainForm : Form
     {
+        Point startPoint;
+        void Form1_MouseAction(object sender, MouseEventArgs e)
+        {
+            if (startPoint.IsEmpty)
+            {
+                startPoint = new Point(-e.Location.X - 8, -e.Location.Y - 30);
+            }
+            else
+            {
+                startPoint = Point.Empty;
+            }
+        }
+
+        void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!startPoint.IsEmpty)
+            {
+                Point endPoint = this.PointToScreen(e.Location);
+                this.Location = new Point(startPoint.X + endPoint.X,
+                                          startPoint.Y + endPoint.Y);
+            }
+        }
+
         public MainForm()
         {
             InitializeComponent();
@@ -158,7 +181,17 @@ namespace CataLauncher
             }
         }
 
-        private void deletePatch_click(object sender, EventArgs e)
+        private void askDeletePatch(object sender, EventArgs e)
+        {
+
+            DialogResult dialogResult = MessageBox.Show(this, "Möchtest du unseren Patch wirklich löschen?", "ATN Patch löschen", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                deletePatch();
+            }
+
+        }
+        private void deletePatch()
         {
             string wowData = WoW.DataDirectory;
             string wowDir = WoW.Directory;
@@ -645,6 +678,5 @@ namespace CataLauncher
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
         }
-
     }
 }
