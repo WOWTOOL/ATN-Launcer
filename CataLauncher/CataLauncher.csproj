@@ -219,6 +219,8 @@
     <None Include="Resources\lower_bar_bg.png" />
     <None Include="Resources\lower_bar_bottom.png" />
     <None Include="Resources\downloadBar1.BackgroundImage.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\logo %281%29.png" />
     <Content Include="Resources\mini_hover.png" />
     <Content Include="Resources\mini_nohover.png" />
     <Content Include="Resources\play.png" />

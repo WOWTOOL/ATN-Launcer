@@ -168,7 +168,7 @@ namespace CataLauncher
             }
             else
             {
-                MessageBox.Show(this, "Konnte Cache Ordner nicht finden!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, "Cache ist aktuell leer!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -677,6 +677,11 @@ namespace CataLauncher
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
+        }
+
+        private void hilfeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

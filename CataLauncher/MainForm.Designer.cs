@@ -57,6 +57,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.serviceController1 = new System.ServiceProcess.ServiceController();
+            this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.versionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.downloadBar1 = new CataLauncher.DownloadBar();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playButtonPictureBox)).BeginInit();
@@ -71,10 +73,11 @@
             this.menuStrip.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem1});
+            this.fileToolStripMenuItem1,
+            this.hilfeToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(13, 29);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(54, 24);
+            this.menuStrip.Size = new System.Drawing.Size(190, 24);
             this.menuStrip.TabIndex = 6;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -338,6 +341,23 @@
             this.webBrowser1.TabIndex = 22;
             this.webBrowser1.Url = new System.Uri("http://atom-network.eu/launcheratn", System.UriKind.Absolute);
             // 
+            // hilfeToolStripMenuItem
+            // 
+            this.hilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.versionToolStripMenuItem});
+            this.hilfeToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
+            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.hilfeToolStripMenuItem.Text = "Über";
+            this.hilfeToolStripMenuItem.Click += new System.EventHandler(this.hilfeToolStripMenuItem_Click);
+            // 
+            // versionToolStripMenuItem
+            // 
+            this.versionToolStripMenuItem.Name = "versionToolStripMenuItem";
+            this.versionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.versionToolStripMenuItem.Text = "Version";
+            this.versionToolStripMenuItem.Click += new System.EventHandler(this.creditsToolStripMenuItem2_Click);
+            // 
             // downloadBar1
             // 
             this.downloadBar1.AutoSize = true;
@@ -424,6 +444,8 @@
         private System.Windows.Forms.ToolStripMenuItem patchDeinstallierenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem woWOrdnerSuchenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cacheLöschenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem versionToolStripMenuItem;
     }
 }
 
