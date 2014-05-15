@@ -134,6 +134,76 @@ namespace CataLauncher
             }
 
         }
+        
+        private void deleteCache_click(object sender, EventArgs e)
+        {
+            string wowCache = WoW.CacheDirectory;
+            if (!string.IsNullOrEmpty(wowCache) && Directory.Exists(wowCache))
+            {
+                System.IO.Directory.Delete(wowCache, true);
+                MessageBox.Show(this, "Cache erfolgreich gelöscht!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(this, "Konnte Cache Ordner nicht finden!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void deleteCache_silent()
+        {
+            string wowCache = WoW.CacheDirectory;
+            if (!string.IsNullOrEmpty(wowCache) && Directory.Exists(wowCache))
+            {
+                System.IO.Directory.Delete(wowCache, true);
+            }
+        }
+
+        private void deletePatch_click(object sender, EventArgs e)
+        {
+            string wowData = WoW.DataDirectory;
+            string wowDir = WoW.Directory;
+            string patch4 = Path.Combine(wowData, "patch-4.MPQ");
+            string patch5 = Path.Combine(wowData, "patch-5.MPQ");
+            string patchdeDE4 = Path.Combine(wowData, "deDE/patch-deDE-4.MPQ");
+            string wowExeBak = Path.Combine(wowDir, "wow.exe.bak");
+            string wowExe = WoW.ExecutableLocation;
+
+            if (!string.IsNullOrEmpty(wowData) && Directory.Exists(wowData))
+            {
+                if (File.Exists(patch4))
+                    System.IO.File.Delete(patch4);
+                else
+                    MessageBox.Show(this, "Konnte Patch-4.MPQ nicht finden!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                if (File.Exists(patch5))
+                    System.IO.File.Delete(patch5);
+                else
+                    MessageBox.Show(this, "Konnte Patch-5.MPQ nicht finden!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                if (File.Exists(patchdeDE4))
+                    System.IO.File.Delete(patchdeDE4);
+                else
+                    MessageBox.Show(this, "Konnte Patch-deDE-4.MPQ nicht finden!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                if (File.Exists(wowExe))
+                    System.IO.File.Delete(wowExe);
+                else
+                    MessageBox.Show(this, "Konnte WoW.exe nicht finden!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                if (File.Exists(wowExeBak))
+                    System.IO.File.Move(wowExeBak, WoW.ExecutableLocation);
+                else
+                    MessageBox.Show(this, "Konnte WoW.exe nicht wiederherstellen!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                MessageBox.Show(this, "Atom Network Patch erfolgreich gelöscht!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(this, "Konnte Patches nicht finden!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private delegate void UpdateProgress(int percent, long bytesReceived, long totalBytesReceive);
         private delegate void MakeVisibleInvisible(bool visible);
@@ -264,7 +334,7 @@ namespace CataLauncher
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Cata Launcher", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ATN Launcher", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -308,7 +378,7 @@ namespace CataLauncher
             else
                 total = String.Format("{0:0.00}kb", double.Parse(totalBytesToReceive.ToString()) / 1024);
 
-            string progress = String.Format("Download Progress: {0} / {1}", received, total);
+            string progress = String.Format("Download Status: {0} / {1}", received, total);
 
             downloadProgressLabel.Text = progress;
 
@@ -393,7 +463,10 @@ namespace CataLauncher
 
 
                             if (!anyDownloads)
+                            {
                                 downloadPatches.DownloadFileAsync(new Uri(ex[0]), path, obj);
+                                deleteCache_silent();
+                            }
                             else
                                 patchQueue.Enqueue(pfi);
 

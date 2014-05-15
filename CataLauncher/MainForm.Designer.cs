@@ -54,6 +54,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.serviceController1 = new System.ServiceProcess.ServiceController();
+            this.patchDeinstallierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.woWOrdnerSuchenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cacheLöschenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.downloadBar1 = new CataLauncher.DownloadBar();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playButtonPictureBox)).BeginInit();
@@ -71,7 +74,7 @@
             this.fileToolStripMenuItem1});
             this.menuStrip.Location = new System.Drawing.Point(13, 29);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(54, 24);
+            this.menuStrip.Size = new System.Drawing.Size(146, 24);
             this.menuStrip.TabIndex = 6;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -88,18 +91,21 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.patchDeinstallierenToolStripMenuItem,
+            this.woWOrdnerSuchenToolStripMenuItem,
+            this.cacheLöschenToolStripMenuItem});
             this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.settingsToolStripMenuItem.Text = "Einstellungen";
-            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.BackColor = System.Drawing.Color.Black;
             this.exitToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(145, 22);
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem1.Text = "Schließen";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
             // 
@@ -300,13 +306,34 @@
             // webBrowser1
             // 
             this.webBrowser1.AllowWebBrowserDrop = false;
-            this.webBrowser1.Location = new System.Drawing.Point(20, 62);
+            this.webBrowser1.Location = new System.Drawing.Point(20, 56);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScrollBarsEnabled = false;
-            this.webBrowser1.Size = new System.Drawing.Size(722, 361);
+            this.webBrowser1.Size = new System.Drawing.Size(714, 367);
             this.webBrowser1.TabIndex = 22;
             this.webBrowser1.Url = new System.Uri("http://atom-network.eu/launcheratn", System.UriKind.Absolute);
+            // 
+            // patchDeinstallierenToolStripMenuItem
+            // 
+            this.patchDeinstallierenToolStripMenuItem.Name = "patchDeinstallierenToolStripMenuItem";
+            this.patchDeinstallierenToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.patchDeinstallierenToolStripMenuItem.Text = "Patch Deinstallieren";
+            this.patchDeinstallierenToolStripMenuItem.Click += new System.EventHandler(this.deletePatch_click);
+            // 
+            // woWOrdnerSuchenToolStripMenuItem
+            // 
+            this.woWOrdnerSuchenToolStripMenuItem.Name = "woWOrdnerSuchenToolStripMenuItem";
+            this.woWOrdnerSuchenToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.woWOrdnerSuchenToolStripMenuItem.Text = "WoW Ordner suchen";
+            this.woWOrdnerSuchenToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // cacheLöschenToolStripMenuItem
+            // 
+            this.cacheLöschenToolStripMenuItem.Name = "cacheLöschenToolStripMenuItem";
+            this.cacheLöschenToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.cacheLöschenToolStripMenuItem.Text = "Cache löschen";
+            this.cacheLöschenToolStripMenuItem.Click += new System.EventHandler(this.deleteCache_click);
             // 
             // downloadBar1
             // 
@@ -346,6 +373,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -387,6 +415,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.ServiceProcess.ServiceController serviceController1;
+        private System.Windows.Forms.ToolStripMenuItem patchDeinstallierenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem woWOrdnerSuchenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cacheLöschenToolStripMenuItem;
     }
 }
 

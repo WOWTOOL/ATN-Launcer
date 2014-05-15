@@ -101,6 +101,20 @@ namespace CataLauncher
             }
 
         }
+        public static string CacheDirectory
+        {
+
+            get
+            {
+
+                if (string.IsNullOrEmpty(Directory))
+                    return null;
+
+                return Path.Combine(Directory, "cache");
+
+            }
+
+        }
 
     }
 }
